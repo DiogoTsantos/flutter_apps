@@ -34,22 +34,25 @@ class _HomeState extends State<Home> {
           'images/youtube.png',
           width: 100,
         ),
-        actions: [
-          IconButton(
+        actions: const [
+          /*IconButton(
             onPressed: () => print('video cam'),
             icon: const Icon( Icons.videocam )
           ),
           const IconButton(
             onPressed: null,
+            icon: Icon( Icons.account_circle )
+          ),*/
+          IconButton(
+            onPressed: null,
             icon: Icon( Icons.search )
           ),
-          const IconButton(
-            onPressed: null,
-            icon: Icon( Icons.account_circle )
-          )
         ],
       ),
-      body: screens[_currentIndex],
+      body: Container(
+        padding: const EdgeInsets.all(16),
+        child: screens[_currentIndex]
+      ),
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: _currentIndex,
         onTap: (index){
