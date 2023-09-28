@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:youtube/api.dart';
+import 'package:youtube/models/video.dart';
+import 'package:youtube/video_list.dart';
 
 class OnTheRise extends StatefulWidget {
   const OnTheRise({super.key});
@@ -8,10 +11,14 @@ class OnTheRise extends StatefulWidget {
 }
 
 class _OnTheRiseState extends State<OnTheRise> {
+  final Api _api = Api();
+
+  Future<List<Video>> _getMostPopularVideo(String? term) {
+    return _api.getMostPopular();
+  }
+
   @override
   Widget build(BuildContext context) {
-    return const Center(
-      child: Text('Em alta')
-    );
+    return ListVideos(_getMostPopularVideo);
   }
 }

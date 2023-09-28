@@ -22,4 +22,14 @@ class Video {
       description: json['snippet']['description']
     );
   }
+
+  factory Video.fromJsonMostPopular(Map<String,dynamic> json) {
+    return Video(
+      id: json['id'],
+      title: json['snippet']['title'],
+      thumbnail: json['snippet']['thumbnails']['high']['url'],
+      channel: json['snippet']['channelTitle'],
+      description: json['snippet']['description']
+    );
+  }
 }

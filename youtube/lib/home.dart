@@ -3,6 +3,7 @@ import 'package:youtube/screens/library.dart';
 import 'package:youtube/screens/on_the_rise.dart';
 import 'package:youtube/screens/start.dart';
 import 'package:youtube/screens/subscription.dart';
+import 'package:youtube/search.dart';
 
 class Home extends StatefulWidget {
   const Home({super.key});
@@ -13,12 +14,15 @@ class Home extends StatefulWidget {
 
 class _HomeState extends State<Home> {
   int _currentIndex = 0;
+  String? _searchTerm = '';
+
+  final Search _delegateSearch = Search();
 
   @override
   Widget build(BuildContext context) {
 
     List<Widget> screens = [
-      const Start(),
+      Start( _searchTerm ),
       const OnTheRise(),
       const Subscriptions(),
       const Library(),
@@ -34,7 +38,7 @@ class _HomeState extends State<Home> {
           'images/youtube.png',
           width: 100,
         ),
-        actions: const [
+        actions: [
           /*IconButton(
             onPressed: () => print('video cam'),
             icon: const Icon( Icons.videocam )
@@ -44,8 +48,16 @@ class _HomeState extends State<Home> {
             icon: Icon( Icons.account_circle )
           ),*/
           IconButton(
-            onPressed: null,
-            icon: Icon( Icons.search )
+            onPressed: () async {
+              String? searchTerm = await showSearch(
+                context: context,
+                delegate: _delegateSearch
+              );
+              setState(() {
+                _searchTerm = searchTerm;
+              });
+            },
+            icon: const Icon( Icons.search )
           ),
         ],
       ),
