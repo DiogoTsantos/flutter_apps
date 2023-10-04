@@ -20,7 +20,32 @@ class _StartState extends State<Start> {
   }
 
   @override
+  void initState() {
+    super.initState();
+    print('chamada 1 - inciou');
+  }
+
+  @override
+  void didChangeDependencies() {
+    super.didChangeDependencies();
+    print('chamada 2 - didchange');
+  }
+
+  @override
+  void didUpdateWidget(covariant Start oldWidget) {
+    super.didUpdateWidget(oldWidget);
+    print('chamada 2 - didupdate');
+  }
+
+  @override
+  void dispose() {
+    super.dispose();
+    print('chamada 4 - acabou');
+  }
+
+  @override
   Widget build(BuildContext context) {
+    print('chamada 3 - build');
     return ListVideos(_listVideo);
   }
 }
