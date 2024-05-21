@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "627646246418",
+    "project_id": "uber-d06bb",
+    "storage_bucket": "uber-d06bb.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:627646246418:android:ca1586696dc5492c3672cb",
+        "android_client_info": {
+          "package_name": "com.d10g0.uber"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCXiELlyTq5-Cg4NTamjg3QDeXE0brMgWo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
