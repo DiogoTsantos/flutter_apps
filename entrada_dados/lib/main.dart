@@ -11,8 +11,8 @@ void main() {
       // home: CampoTexto()
       // home: EntradaCheckbox()
       // home: EntradaRadioButton()
-      // home: EntradaSwitch()
-      home: EntradaSlider()
+      home: EntradaSwitch()
+      // home: EntradaSlider()
     )
   );
 }

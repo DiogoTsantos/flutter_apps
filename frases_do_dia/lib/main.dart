@@ -39,7 +39,12 @@ class PhrasesDay_State extends State<PhrasesDay> {
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
               Image.asset('images/logo.png'),
-              Text( _phrases[_number] ),
+              Text(
+                _phrases[_number],
+                style: TextStyle(
+                  fontSize: MediaQuery.of(context).size.width * 0.05
+                ),
+              ),
               ElevatedButton(
                 onPressed: () => setState(() {
                   _number = Random().nextInt(4);

@@ -25,7 +25,7 @@ class _HomeState extends State<Home> {
       _contentController.clear();
       textSaveEdit = 'Salvar';
     } else {
-      _titleController.text = '${anotation!.title}';
+      _titleController.text = '${anotation.title}';
       _contentController.text = '${anotation.description}';
       textSaveEdit = 'Atualizar';
     }

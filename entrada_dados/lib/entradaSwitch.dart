@@ -29,6 +29,8 @@ class _entradaSwitchState extends State<EntradaSwitch> {
                 });
               },
               title: Text('Receber Notificações?'),
+              subtitle: Text('teste'),
+              secondary: Icon(Icons.add_box),
             ),
             SwitchListTile(
               value: _escolharConfig,
@@ -47,16 +49,16 @@ class _entradaSwitchState extends State<EntradaSwitch> {
                 'Salvar',
                 style: TextStyle(fontSize: 20),
               )
-            )
-            // Switch(
-            //   value: _escolharUsuario,
-            //   onChanged: (bool valor) {
-            //     setState(() {
-            //       _escolharUsuario = valor;
-            //     });
-            //   }
-            // ),
-            // Text('Receber Notificações?')
+            ),
+            Switch(
+              value: _escolharUsuario,
+              onChanged: (bool valor) {
+                setState(() {
+                  _escolharUsuario = valor;
+                });
+              }
+            ),
+            Text('Receber Notificações?')
           ]
         ),
       ),

@@ -72,11 +72,16 @@ class _JogoState extends State<Jogo> {
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
-                GestureDetector(
+                InkWell(
                   onTap: () => _optionSelected('pedra'),
-                  child:  Image.asset(
-                    width: 100,
-                    'images/pedra.png'
+                  child:  Ink(
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(50)
+                    ),
+                    child: Image.asset(
+                      width: 100,
+                      'images/pedra.png'
+                    ),
                   ),
                 ),
                 GestureDetector(

@@ -88,7 +88,10 @@ class _AlcoolGasolinaState extends State<AlcoolGasolina> {
             Padding(
               padding: const EdgeInsets.only(top:10.0),
               child: ElevatedButton(
-                onPressed: _calcularDiferenca,
+                onPressed: _validaPreco(_controllerAlcool)
+                  && _validaPreco(_controllerGasolina)
+                    ? _calcularDiferenca
+                    : null,
                 style: ElevatedButton.styleFrom(
                   padding: const EdgeInsets.symmetric(vertical:13),
                   textStyle: const TextStyle(
